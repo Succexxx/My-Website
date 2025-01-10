@@ -1,0 +1,551 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003d80;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #003d80;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+header .logo img {
+  height: 50px;
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default */
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu ul li {
+  margin-left: 20px;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  background-color: #555;
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+  }
+
+  .nav-menu ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top:20px 10px;
+  padding: 0;
+  gap: 20px;
+}
+
+footer ul li {
+  margin: 0;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #4CAF50;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Page-Specific Styles */
+
+section h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+  
+ section h3 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+section h4 {
+  text-align: center;
+}
+
+/* Events Section */
+.events .event {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.events .event h2 {
+  color: var(--primary-color);
+}
+
+.events .event p {
+  margin-bottom: 10px;
+}
+
+.events .btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.events .btn-primary:hover {
+  background-color: var(--primary-color);
+}
+
+/* Resources Page */
+.resources ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resources ul li {
+  margin-bottom: 15px;
+}
+
+.resources ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resources ul li a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Membership Form */
+.membership form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.membership form input,
+.membership form select,
+.membership form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.membership form button {
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.membership form button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Contact Page */
+.contact ul li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.contact ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact form button {
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.contact form button:hover {
+  background-color: var(--primary-color);
+}
+
+
+/* Hero Section */
+.hero {
+  background-color: #0056b3;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.hero .btn-primary {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background-color: #333;
+}
+
+/* About Section */
+.overview {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overview h1 {
+  text-align: center;
+  color: #003d80;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.overview p {
+  text-align: center;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+  text-align: center;
+  margin: 0 20px;
+  flex: 1;
+}
+
+.feature h2 {
+  font-size: 1.8em;
+  color: #003d80;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+img {
+  max-width: 100%; /* Ensure images don't overflow */
+  height: auto;
+}
+
+.container, section {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent overflow in sections */
+}
+
+/* Ensure content fits within the viewport */
+@media (max-width: 768px) {
+  header, .hero, .nav-menu, footer {
+    padding: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2em; /* Reduce font size for smaller screens */
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+  }
+
+  .nav-menu ul li {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .features {
+    flex-direction: column; /* Stack features vertically */
+    padding: 10px;
+  }
+
+  .features .feature {
+    margin: 10px 0;
+  }
+
+  footer ul {
+    flex-direction: column;
+  }
+
+  footer ul li {
+    margin: 5px 0;
+  }
+}
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+button, .btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+button:hover, .btn-primary:hover {
+  background-color: #003d80;
+  transform: translateY(-3px); /* Slight hover lift effect */
+}
+
+/* Section Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+#countdown-timer {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+#countdown-timer span {
+  display: inline-block;
+  padding: 10px;
+  background-color: #003d80;
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.newsletter {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.newsletter form {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #003d80;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Root Variables for Branding Colors */
+:root {
+  --primary-color: #003d80;
+  --secondary-color: #4CAF50;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button, .btn-primary {
+  background-color: var(--secondary-color);
+}
+
+header {
+  background-color: var(--primary-color);
+}
+
+
+
+
+
+
+
